@@ -2,130 +2,68 @@
 
 <div align="center">
 
-  [![Website](https://img.shields.io/badge/Website-billionverify.com-0070f3)](https://billionverify.com)
-  [![GitHub](https://img.shields.io/badge/GitHub-billionverify-181717?logo=github)](https://github.com/billionverify)
-  [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-  [![Email](https://img.shields.io/badge/Email-support%40billionverify.com-EA4335)](mailto:support@billionverify.com)
+[![Website](https://img.shields.io/badge/Website-billionverify.com-0070f3)](https://billionverify.com)
+[![Docs](https://img.shields.io/badge/Docs-API%20Reference-181717)](https://billionverify.com/docs/api-reference)
+[![Email](https://img.shields.io/badge/Email-support%40billionverify.com-EA4335)](mailto:support@billionverify.com)
 
-  **Professional Email Verification Service**
+**Email verification for sign-up forms, CRMs and outbound lists.**
 
-  High-performance email validation solution with 99.9% accuracy and real-time verification capabilities
-
-  [Website](https://billionverify.com) • [Features](https://billionverify.com/features) • [Quick Start](https://billionverify.com/docs/quickstart) • [Pricing](https://billionverify.com/pricing)
+[Website](https://billionverify.com) • [Quick start](https://billionverify.com/docs/quickstart) • [API reference](https://billionverify.com/docs/api-reference) • [Integrations](https://billionverify.com/docs/integration-guides)
 
 </div>
 
 ---
 
-## 📋 About BillionVerify
+## What BillionVerify does
 
-BillionVerify is a modern, enterprise-grade email verification service platform that provides fast, accurate, and reliable email validation solutions. Built with cutting-edge technology and best practices, we ensure high performance and scalability for businesses of all sizes.
+BillionVerify checks whether an email address can receive mail before you send to it, so bounces and fake sign-ups stay out of your lists.
 
-### Core Features
+- **Real-time verification** for a single address, built into sign-up and checkout forms. [Learn more](https://billionverify.com/email-verification)
+- **Bulk verification and list cleaning** for CSV files and existing lists. [Learn more](https://billionverify.com/bulk-email-verification)
+- **Risk signals** beyond valid / invalid: [catch-all domains](https://billionverify.com/catch-all-verifier), [disposable addresses](https://billionverify.com/disposable-email-detection) and [role accounts](https://billionverify.com/role-account-detection).
+- **Free email tools** for SPF, DKIM, DMARC, MX and blacklist checks. [Browse the tools](https://billionverify.com/free-email-tools)
 
-- ✅ **99.9% Accuracy** - Industry-leading verification accuracy
-- ⚡ **High Performance** - Millisecond-level verification response time
-- 🔄 **Real-time Verification** - Single email and batch verification support
-- 📊 **Detailed Analytics** - Comprehensive verification results and reports
-- 🌍 **Global Coverage** - International email verification support
-- 🔐 **Enterprise Security** - Data encryption and privacy protection
-- 💰 **Flexible Pricing** - Pay-as-you-go, no long-term contracts
+## Quick start
 
----
-
-## 🚀 Quick Start
-
-### For Users
-
-Visit [billionverify.com](https://billionverify.com) to:
-- Sign up for a free account
-- Verify your first emails
-- Integrate with our API
-- Access detailed documentation
-
-### For Developers
-
-Our [API documentation](https://billionverify.com/docs) provides:
-- REST API reference
-- Code examples and SDKs
-- Integration guides
-- Rate limiting and quotas
-
-### API Integration Example
+Create an API key in the BillionVerify dashboard, then verify an address:
 
 ```bash
-# Verify a single email
-curl -X POST https://api.billionverify.com/v1/verify \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+curl -X POST https://api.billionverify.com/v1/verify/single \
+  -H "BV-API-KEY: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{
-    "email": "example@domain.com"
-  }'
+  -d '{"email": "test@example.com"}'
 ```
 
-For more details, visit [API Documentation](https://billionverify.com/docs/api)
+Base URL `https://api.billionverify.com/v1`. The full contract is in the [API reference](https://billionverify.com/docs/api-reference) and the [OpenAPI spec](https://api.billionverify.com/openapi.yaml).
 
----
+## Open-source projects
 
-## 💡 Use Cases
+| Project | What it is |
+| --- | --- |
+| [billionverify-node](https://github.com/BillionVerify/billionverify-node) | Node.js SDK |
+| [billionverify-python](https://github.com/BillionVerify/billionverify-python) | Python SDK |
+| [billionverify-go](https://github.com/BillionVerify/billionverify-go) | Go SDK |
+| [billionverify-java](https://github.com/BillionVerify/billionverify-java) | Java SDK |
+| [billionverify-php](https://github.com/BillionVerify/billionverify-php) | PHP SDK |
+| [billionverify-cli](https://github.com/BillionVerify/billionverify-cli) | Command-line tool |
+| [billionverify-mcp](https://github.com/BillionVerify/billionverify-mcp) | MCP server for AI assistants |
+| [billionverify-skill](https://github.com/BillionVerify/billionverify-skill) | Agent skill for AI coding agents |
+| [wordpress](https://github.com/BillionVerify/wordpress) | WordPress plugin |
+| [n8n-nodes-billionverify](https://github.com/BillionVerify/n8n-nodes-billionverify) | n8n community node |
+| [disposable](https://github.com/BillionVerify/disposable) | Open-source disposable email detection |
 
-- **E-commerce** - Reduce cart abandonment with verified customer emails
-- **SaaS** - Prevent fake signups and reduce support tickets
-- **Marketing** - Improve email deliverability and campaign ROI
-- **HR & Recruitment** - Verify candidate contact information
-- **Data Management** - Maintain clean, verified customer databases
+SDK docs: [billionverify.github.io](https://billionverify.github.io)
 
----
+## Use it where you already work
 
-## 📚 Resources
+- **Forms and CMS**: [WordPress](https://billionverify.com/docs/integration-guides/cms-platforms/wordpress), [Google Forms](https://billionverify.com/docs/integration-guides/form-builders/google-forms), [Typeform](https://billionverify.com/docs/integration-guides/form-builders/typeform)
+- **E-commerce**: [Shopify](https://billionverify.com/docs/integration-guides/ecommerce/shopify), [WooCommerce](https://billionverify.com/docs/integration-guides/ecommerce/woocommerce)
+- **CRM and email marketing**: [HubSpot](https://billionverify.com/docs/integration-guides/marketing-crm/hubspot), [Mailchimp](https://billionverify.com/docs/integration-guides/marketing-crm/mailchimp)
+- **Automation**: [Zapier](https://billionverify.com/docs/integration-guides/automation/zapier)
+- **AI agents**: [MCP server](https://billionverify.com/docs/ai-guides/mcp), [agent skills](https://billionverify.com/docs/ai-guides/agent-skills)
 
-- [Website](https://billionverify.com) - Official website
-- [Documentation](https://billionverify.com/docs) - Complete guides and API reference
-- [Pricing](https://billionverify.com/pricing) - Transparent, pay-as-you-go pricing
-- [Blog](https://billionverify.com/blog) - Industry insights and best practices
+## Support
 
----
-
-## 🤝 Support
-
-- 📧 **Email Support**: [support@billionverify.com](mailto:support@billionverify.com)
-- 💬 **Live Chat**: Available on [billionverify.com](https://billionverify.com)
-- 📖 **Documentation**: [billionverify.com/docs](https://billionverify.com/docs)
-- 🐛 **Report Issues**: [Contact Support](https://billionverify.com/support)
-
----
-
-## 🎯 Why Choose BillionVerify?
-
-| Feature | BillionVerify | Competitors |
-|---------|---------------|-------------|
-| Accuracy | 99.9% | 95-98% |
-| Response Time | <50ms | 100-200ms |
-| API Rate Limit | 10,000 req/min | 1,000-5,000 req/min |
-| Free Tier | ✅ 100 free daily credits | Limited or None |
-| Customer Support | 24/7 | Business hours only |
-| Data Privacy | GDPR Compliant | Varies |
-
----
-
-## 📜 License
-
-This organization's projects are licensed under the MIT License.
-
----
-
-## 🌟 Testimonials
-
-> "BillionVerify helped us reduce invalid emails by 95% and save on marketing spend." - Marketing Director, E-commerce Company
-
-> "The easiest email verification API we've ever integrated. Their support team is fantastic!" - CTO, SaaS Startup
-
----
-
-<div align="center">
-
-**[Visit billionverify.com](https://billionverify.com)** | **[View Pricing](https://billionverify.com/pricing)** | **[Read Docs](https://billionverify.com/docs)**
-
-Made with ❤️ by [BillionVerify Team](https://billionverify.com)
-
-</div>
+- Email: [support@billionverify.com](mailto:support@billionverify.com)
+- Documentation: [billionverify.com/docs](https://billionverify.com/docs)
+- Guides: [Email Marketing Bible](https://billionverify.com/email-marketing-bible) and the [blog](https://billionverify.com/blog)
